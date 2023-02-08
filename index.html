@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PreEntrega-2-Armiento</title>
+</head>
+<body>
+    <aside>
+        <header>
+            <h1 class="logo">TobiExpress</h1>
+            <nav>
+                <ul>
+                    <li class="botonCategoria">
+                        <button>
+                            <i class="bi bi-caret-right-fill"></i> Todos los productos
+                        </button>
+                    </li>
+                    <li class="botonCategoria">
+                        <button>
+                            <i class="bi bi-caret-right"></i> Buzos oversize
+                        </button>
+                    </li>
+                    <li class="botonCarrito">
+                        <a href="/carrito.html">
+                            <i class="bi bi-basket2-fill"></i> Carrito 
+                            <span class="numerito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </aside>
+    <main>
+        <form id="cargarProductos">
+
+            <input type="text" id="nombreDelProducto" placeholder="Nombre" autocomplete="off">
+
+            <input type="text" id="precioDelProducto" placeholder="Precio" autocomplete="off">
+
+            <button id="botonCargar" type="submit">Cargar</button>
+
+        </form>
+        <table id="listadoProductos">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+
+            <tbody id="bodyTabla">
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+        <!-- <h2>Productos</h2>
+        <div class="contenedorProductos">
+            <div class="productos">
+                <img class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
+                <div class="productosDescripcion">
+                    <h3 class="tituloProductos">Esencia sabor limon</h3>
+                    <p class="precioProductos">$1000</p>
+                    <button class="botonProductos">Agregar</button>
+                </div>
+            </div>
+            <div class="productos">
+                <img class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
+                <div class="productosDescripcion">
+                    <h3 class="tituloProductos">Esencia sabor vainilla</h3>
+                    <p class="precioProductos">$1000</p>
+                    <button class="botonProductos">Agregar</button>
+                </div>
+            </div>
+            <div class="productos">
+                <img class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
+                <div class="productosDescripcion">
+                    <h3 class="tituloProductos">Esencia sabor chocolate</h3>
+                    <p class="precioProductos">$1000</p>
+                    <button class="botonProductos">Agregar</button>
+                </div>
+            </div>
+            <div class="productos">
+                <img class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
+                <div class="productosDescripcion">
+                    <h3 class="tituloProductos">Esencia sabor mango</h3>
+                    <p class="precioProductos">$1000</p>
+                    <button class="botonProductos">Agregar</button>
+                </div>
+            </div>
+        </div> -->
+    </main>
+
+    
+    <footer>
+        <p class="textoFooter">Copyright © TobiExpress</p>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
