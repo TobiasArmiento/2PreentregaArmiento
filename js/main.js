@@ -1,82 +1,104 @@
-// alert("¡Hola! a continuación usted podra armar una lista de los productos que desea comprar")
-// let Nombre = prompt("Ingrese su nombre");
+/*
+ARRAY DE OBJETOS
+*/
 
-// while (Nombre === ""){
-//     alert("El texto ingresado no es válido");
-//     Nombre = prompt("Ingrese su nombre nuevamente");
-// }
-
-// alert("¡Bienvenido " + Nombre + "!");
-
-
-// class Producto {
-//     constructor(nombre, precio) {
-//         this.nombre = nombre;
-//         this.precio = precio;
-//     }
-// }
-
-// //Inicia el programa
-
-
-// function renderizarProductos () {
-
-//     //Limpiamos la tabla 
-//     bodyTabla.innerHTML = "";
-    
-//     ListaDeProductos.forEach ((producto) => {
-
-//         // Cremos la fila
-//         const tr = document.createElement("tr");
-
-//         const tdNombre = document.createElement("td");
-
-//             tdNombre.innerHTML= `${producto.nombre}`;
-
-//         const tdPrecio = document.createElement("td");
-    
-//             tdPrecio.innerHTML = `$${producto.precio}`;
-
-//         // Agrego el td al tr
-
-//         tr.append(tdNombre);
-//         tr.append(tdPrecio);
-        
-//         // Agrego el tr al tbody
-//         bodyTabla.append(tr);
-//     });
-
-// }
+const productos = [
+    {
+        id: "Limon-01",
+        titulo: "Limon",
+        imagen: "./img/limon.jpg",
+        categoria: {
+            nombre: "Esencias",
+            id: "saboresDulces",
+        },
+        precio: 1000
+    },
+    {
+        id: "Vainilla-02",
+        titulo: "Vainilla",
+        imagen: "./img/vainilla.jpg",
+        categoria: {
+            nombre: "Esencias",
+            id: "saboresDulces",
+        },
+        precio: 1000
+    },
+    {
+        id: "Chocolate-01",
+        titulo: "Chocolate",
+        imagen: "./img/chocolate.jpg",
+        categoria: {
+            nombre: "Esencias",
+            id: "saboresDulces",
+        },
+        precio: 1000
+    },
+    {
+        id: "Chocolate-01",
+        titulo: "Mango",
+        imagen: "./img/mango.jpg",
+        categoria: {
+            nombre: "Esencias",
+            id: "saboresDulces",
+        },
+        precio: 1000
+    }
+];
 
 
-// // Se crean variables llamando a los id del html para luego poder modificarlos
-// const formularioCargarProductos = document.getElementById("cargarProductos");
-// const inputNombre = document.getElementById("nombreDelProducto");
-// const inputPrecio = document.getElementById("precioDelProducto");
-// const bodyTabla = document.getElementById("bodyTabla");
-// const clickBotonCargar = document.getElementById("botonCargar");
+/*
+LLAMADOS AL DOM
+*/
+const contenedorProductos = document.querySelector("#contenedorProductos");
+const botonesCategoria = document.querySelectorAll(".botonCategoria");
 
 
-// // se llama a ListaDeProductos con un array
-// const ListaDeProductos = []
+
+/**
+FUNCIONES
+ */
+
+function cargarProductos(productosElegidos) {
+
+    contenedorProductos.innerHTML = "";
+
+    productosElegidos.forEach(productos => {
+
+        const div = document.createElement("div");
+        div.classList.add("productos");
+        div.innerHTML = `
+        <img class="productosImagen" src="${productos.imagen}" alt="${productos.titulo}">
+            <div class="productosDescripcion">
+                <h3 class="tituloProductos">${productos.titulo}</h3>
+                <p class="precioProductos">$${productos.precio}</p>
+                <button class="botonProductos" id="${productos.id}">Agregar</button>
+            </div>
+        `
+
+        contenedorProductos.append(div);
+    })
+}
+
+cargarProductos(productos);
 
 
-// // Se llama al formulario para luego almacenar los datos ingresados por el usuario
-// formularioCargarProductos.addEventListener ( "submit", (Event) => {
+/*
+LLAMAR A TODOS LOS BOTONES CON FOREACH
+*/
 
-//     //freno el flujo
-//     Event.preventDefault();
+botonesCategoria.forEach(boton => {
 
-//     // obtengo el nombre y el precio
-//     const nombre = inputNombre.value;
-//     const precio = inputPrecio.value;
+    boton.addEventListener("click", (e) => {
 
-//     //reseteo el valor de cada input
-//     inputNombre.value = "";
-//     inputPrecio.value = "";
+        botonesCategoria.forEach(boton => boton.classList.remove("active"));
 
-//     // agrego el producto ingresado por el usuario al array
-//     ListaDeProductos.push(new Producto (nombre, precio));
+        e.currentTarget.classList.add("active");
 
-//     renderizarProductos();
-// })
+        if(e.currentTarget.id !== "todos") {
+        const productosBoton = productos.filter(productos => productos.categoria.id === e.currentTarget.id);
+        cargarProductos(productosBoton);
+        } else {
+            cargarProductos(productos);
+        }
+    })
+});

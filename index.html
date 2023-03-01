@@ -17,13 +17,13 @@
                 <nav>
                     <ul class="menu">
                         <li>
-                            <button class="botonMenu botonCategoria active">
+                            <button id="todos" class="botonMenu botonCategoria active">
                                 <i class="bi bi-caret-right-fill"></i> Todos los productos
                             </button>
                         </li>
                         <li>
-                            <button class="botonMenu botonCategoria">
-                                <i class="bi bi-caret-right"></i> Buzos oversize
+                            <button id="saboresDulces" class="botonMenu botonCategoria">
+                                <i class="bi bi-caret-right"></i> Sabores Dulces
                             </button>
                         </li>
                         <li>
@@ -40,9 +40,9 @@
         </aside>
         <main>   
             <h2 class="tituloPrincipal">Todos los Productos</h2>
-            <div class="contenedorProductos">
+            <div id="contenedorProductos" class="contenedorProductos">
                 <div class="productos">
-                    <img class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
+                    <img id="saboresDulces" class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor limon</h3>
                         <p class="precioProductos">$1000</p>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
+                    <img id="saboresDulces" class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor vainilla</h3>
                         <p class="precioProductos">$1000</p>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
+                    <img id="saboresDulces" class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor chocolate</h3>
                         <p class="precioProductos">$1000</p>
@@ -66,17 +66,15 @@
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
+                    <img id="saboresDulces" class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor mango</h3>
                         <p class="precioProductos">$1000</p>
                         <button class="botonProductos">Agregar</button>
                     </div>
                 </div>
-            </div>
-            <div class="contenedorProductos">
                 <div class="productos">
-                    <img class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
+                    <img id="saboresDulces" class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor limon</h3>
                         <p class="precioProductos">$1000</p>
@@ -84,7 +82,7 @@
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
+                    <img id="saboresDulces" class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor vainilla</h3>
                         <p class="precioProductos">$1000</p>
@@ -92,7 +90,7 @@
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
+                    <img id="saboresDulces" class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor chocolate</h3>
                         <p class="precioProductos">$1000</p>
@@ -100,75 +98,7 @@
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor mango</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="contenedorProductos">
-                <div class="productos">
-                    <img class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor limon</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor vainilla</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor chocolate</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor mango</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="contenedorProductos">
-                <div class="productos">
-                    <img class="productosImagen" src="./img/limon.jpg" alt="Esencia sabor limon">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor limon</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="productosImagen" src="./img/vainilla.jpg" alt="Esencia sabor vainilla">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor vainilla</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="productosImagen" src="./img/chocolate.jpg" alt="Esencia sabor chocolate">
-                    <div class="productosDescripcion">
-                        <h3 class="tituloProductos">Esencia sabor chocolate</h3>
-                        <p class="precioProductos">$1000</p>
-                        <button class="botonProductos">Agregar</button>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
+                    <img id="saboresDulces" class="productosImagen" src="./img/mango.jpg" alt="Esencia sabor mango">
                     <div class="productosDescripcion">
                         <h3 class="tituloProductos">Esencia sabor mango</h3>
                         <p class="precioProductos">$1000</p>
