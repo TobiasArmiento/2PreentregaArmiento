@@ -8,7 +8,7 @@ const productos = [
         titulo: "Limon",
         imagen: "./img/limon.jpg",
         categoria: {
-            nombre: "Esencias",
+            nombre: "Sabores Dulces",
             id: "saboresDulces",
         },
         precio: 1000
@@ -18,27 +18,27 @@ const productos = [
         titulo: "Vainilla",
         imagen: "./img/vainilla.jpg",
         categoria: {
-            nombre: "Esencias",
+            nombre: "Sabores Dulces",
             id: "saboresDulces",
         },
         precio: 1000
     },
     {
-        id: "Chocolate-01",
+        id: "Chocolate-03",
         titulo: "Chocolate",
         imagen: "./img/chocolate.jpg",
         categoria: {
-            nombre: "Esencias",
+            nombre: "Sabores Dulces",
             id: "saboresDulces",
         },
         precio: 1000
     },
     {
-        id: "Chocolate-01",
+        id: "Mango-04",
         titulo: "Mango",
         imagen: "./img/mango.jpg",
         categoria: {
-            nombre: "Esencias",
+            nombre: "Sabores Dulces",
             id: "saboresDulces",
         },
         precio: 1000
@@ -51,7 +51,9 @@ LLAMADOS AL DOM
 */
 const contenedorProductos = document.querySelector("#contenedorProductos");
 const botonesCategoria = document.querySelectorAll(".botonCategoria");
-
+const tituloPrincipal = document.querySelector("#titulo-principal");
+let botonesAgregar = document.querySelectorAll(".botonProductos");
+const numerito = document.querySelector("#numeritoCarrito")
 
 
 /**
@@ -77,6 +79,9 @@ function cargarProductos(productosElegidos) {
 
         contenedorProductos.append(div);
     })
+
+    actualizarBotonesAgregar();
+
 }
 
 cargarProductos(productos);
@@ -95,10 +100,70 @@ botonesCategoria.forEach(boton => {
         e.currentTarget.classList.add("active");
 
         if(e.currentTarget.id !== "todos") {
+
+        const productoCategoria = productos.find(productos => productos.categoria.id === e.currentTarget.id);
+        tituloPrincipal.innerText = productoCategoria.categoria.nombre;
+
         const productosBoton = productos.filter(productos => productos.categoria.id === e.currentTarget.id);
         cargarProductos(productosBoton);
+
         } else {
+            tituloPrincipal.innerText = "Todos los productos";
             cargarProductos(productos);
         }
     })
 });
+
+
+function actualizarBotonesAgregar () {
+
+    botonesAgregar = document.querySelectorAll(".botonProductos");
+
+    botonesAgregar.forEach(boton => {
+
+        boton.addEventListener("click", agregarAlCarrito);
+    });
+
+}
+
+
+/*
+ARRAY CARRITO
+*/
+
+const productosEnCarritoLS = JSON.parse(localStorage.getItem("productosEnCarrito"));
+
+let productosEnCarrito;
+if (productosEnCarritoLS) {
+    productosEnCarrito = productosEnCarritoLS;
+    actualizarNumerito();
+} else {
+    productosEnCarrito = [];
+}
+
+
+function agregarAlCarrito (e) {
+
+    const idBoton = e.currentTarget.id;
+    const productosAgregados = productos.find(productos => productos.id === idBoton);
+
+    if(productosEnCarrito.some(productos => productos.id === idBoton)){
+        
+        const index = productosEnCarrito.findIndex(productos => productos.id === idBoton);
+        productosEnCarrito[index].cantidad++;
+    } else {
+        
+        productosAgregados.cantidad = 1;
+        productosEnCarrito.push(productosAgregados);
+    }
+
+    actualizarNumerito();
+
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
+}
+
+function actualizarNumerito () {
+
+    let nuevoNumerito = productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
+    numerito.innerText = nuevoNumerito;
+}
