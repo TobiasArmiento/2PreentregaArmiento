@@ -131,11 +131,11 @@ function actualizarBotonesAgregar () {
 ARRAY CARRITO
 */
 
-const productosEnCarritoLS = JSON.parse(localStorage.getItem("productosEnCarrito"));
+let productosEnCarritoLS = localStorage.getItem("productosEnCarrito");
 
 let productosEnCarrito;
 if (productosEnCarritoLS) {
-    productosEnCarrito = productosEnCarritoLS;
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
     actualizarNumerito();
 } else {
     productosEnCarrito = [];
