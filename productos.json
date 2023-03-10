@@ -1,0 +1,42 @@
+[
+    {
+        "id": "Limon-01",
+        "titulo": "Limon",
+        "imagen": "./img/limon.jpg",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Vainilla-02",
+        "titulo": "Vainilla",
+        "imagen": "./img/vainilla.jpg",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Chocolate-03",
+        "titulo": "Chocolate",
+        "imagen": "./img/chocolate.jpg",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Mango-04",
+        "titulo": "Mango",
+        "imagen": "./img/mango.jpg",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1000
+    }
+]

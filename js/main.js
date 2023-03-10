@@ -1,49 +1,15 @@
 /*
-ARRAY DE OBJETOS
+PETICIONES CON FETCH DEL ARRAY DE PRODUCTOS EN JSON 
 */
 
-const productos = [
-    {
-        id: "Limon-01",
-        titulo: "Limon",
-        imagen: "./img/limon.jpg",
-        categoria: {
-            nombre: "Sabores Dulces",
-            id: "saboresDulces",
-        },
-        precio: 1000
-    },
-    {
-        id: "Vainilla-02",
-        titulo: "Vainilla",
-        imagen: "./img/vainilla.jpg",
-        categoria: {
-            nombre: "Sabores Dulces",
-            id: "saboresDulces",
-        },
-        precio: 1000
-    },
-    {
-        id: "Chocolate-03",
-        titulo: "Chocolate",
-        imagen: "./img/chocolate.jpg",
-        categoria: {
-            nombre: "Sabores Dulces",
-            id: "saboresDulces",
-        },
-        precio: 1000
-    },
-    {
-        id: "Mango-04",
-        titulo: "Mango",
-        imagen: "./img/mango.jpg",
-        categoria: {
-            nombre: "Sabores Dulces",
-            id: "saboresDulces",
-        },
-        precio: 1000
-    }
-];
+fetch("/productos.json")
+    .then((response) => {
+        return response.json()
+    })
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 
 /*
@@ -84,7 +50,6 @@ function cargarProductos(productosElegidos) {
 
 }
 
-cargarProductos(productos);
 
 
 /*
@@ -120,7 +85,7 @@ function actualizarBotonesAgregar () {
     botonesAgregar = document.querySelectorAll(".botonProductos");
 
     botonesAgregar.forEach(boton => {
-
+        
         boton.addEventListener("click", agregarAlCarrito);
     });
 
@@ -146,7 +111,6 @@ function agregarAlCarrito (e) {
 
     const idBoton = e.currentTarget.id;
     const productosAgregados = productos.find(productos => productos.id === idBoton);
-
     if(productosEnCarrito.some(productos => productos.id === idBoton)){
         
         const index = productosEnCarrito.findIndex(productos => productos.id === idBoton);
@@ -156,7 +120,8 @@ function agregarAlCarrito (e) {
         productosAgregados.cantidad = 1;
         productosEnCarrito.push(productosAgregados);
     }
-
+    
+    productoAgregadoLibreria ();
     actualizarNumerito();
 
     localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito));
@@ -167,3 +132,29 @@ function actualizarNumerito () {
     let nuevoNumerito = productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
 }
+
+/*
+    LIBRERIA SWEET ALERT
+*/
+
+
+function productoAgregadoLibreria () {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
+
+    Toast.fire({
+        icon: 'success',
+        iconColor: '#f17a4f',
+        title: 'Agregado correctamente!',
+    });
+
+};
