@@ -38,5 +38,66 @@
             "id": "saboresDulces"
         },
         "precio": 1000
+    },
+    {
+        "id": "Azahar-05",
+        "titulo": "Azahar",
+        "imagen": "./img/azahar.png",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1800
+    },
+    {
+        "id": "Anis-06",
+        "titulo": "Anis",
+        "imagen": "./img/anis.png",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1800
+    },
+    {
+        "id": "Banana-07",
+        "titulo": "Banana",
+        "imagen": "./img/banana.png",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1800
+    },
+    {
+        "id": "Frutilla-08",
+        "titulo": "Frutilla",
+        "imagen": "./img/frutilla.png",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1800
+    },
+    {
+        "id": "Naranja-09",
+        "titulo": "Naranja",
+        "imagen": "./img/naranja.png",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1800
+    },
+    {
+        "id": "PanDulce-09",
+        "titulo": "Pan Dulce",
+        "imagen": "./img/pandulce.png",
+        "categoria": {
+            "nombre": "Sabores Dulces",
+            "id": "saboresDulces"
+        },
+        "precio": 1800
     }
 ]
+
